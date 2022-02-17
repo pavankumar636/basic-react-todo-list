@@ -1,34 +1,36 @@
 
-name: Node.js CI
+name: Node.js CI  #name of the workflow.
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ] #on every push the workflow will be triggered.
 
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #github hosted runners, other runners for windows and mac also present in github hosted runners.
 
 
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2 # getting code from git hub using actions
     - name: Use Node.js 
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v2 # node actions for github actions.
       with:
-        node-version: "16.x"
-    - run: node -v
-    - run: npm install 
-    - run: npm run build 
-#     - run: npm test
-    - run: ls
-    - run: npm pack 
+        node-version: "16.x" #selecting node version 
+        
+    - run: node -v #checking node version
+    - run: npm install #installing npm 
+    - run: npm run build  #getting dependences from package.json to make it ready for build and creating package
+    
+    - run: npm pack #creating package for next steps of CI/CD
+    
     - run: ls 
-    - uses: actions/upload-artifact@v2
+    
+    - uses: actions/upload-artifact@v2 #using this actions to push the package to github actions packages
       with:
-        name: my-artifact
-        path: basic-todo-react-0.1.0.tgz
+        name: my-artifact  #name of the package on user choice. 
+        path: basic-todo-react-0.1.0.tgz #path of the package after building package.
     
     
