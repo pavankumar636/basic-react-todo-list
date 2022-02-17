@@ -26,10 +26,9 @@ jobs:
     - run: ls
     - run: npm pack 
     - run: ls 
-    
-   # - uses: actions/upload-artifact@v2
-   #   with:
-   #     name: my-artifact
-   #     path: pack
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: basic-todo-react-0.1.0.tgz
     
     
