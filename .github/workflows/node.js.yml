@@ -24,8 +24,8 @@ jobs:
     - run: npm run build 
 #     - run: npm test
     - run: ls
-    - run: ls build
     - run: npm pack 
+    - run: ls 
     
    # - uses: actions/upload-artifact@v2
    #   with:
