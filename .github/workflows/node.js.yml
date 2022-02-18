@@ -23,7 +23,7 @@ jobs:
     - run: node -v #checking node version
     - run: npm install #installing npm 
     - run: npm run build  #getting dependences from package.json to make it ready for build and creating package
-    
+    - run: ls build
     - run: npm pack #creating package for next steps of CI/CD
     
     - run: ls 
