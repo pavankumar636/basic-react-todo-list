@@ -27,10 +27,11 @@ jobs:
     - run: npm pack #creating package for next steps of CI/CD
     
     - run: ls 
+    - run: tar -xvf *.tgz
     
-    - uses: actions/upload-artifact@v2 #using this actions to push the package to github actions packages
-      with:
-        name: my-artifact  #name of the package on user choice. 
-        path: basic-todo-react-0.1.0.tgz #path of the package after building package.
+#     - uses: actions/upload-artifact@v2 #using this actions to push the package to github actions packages
+#       with:
+#         name: my-artifact  #name of the package on user choice. 
+#         path: basic-todo-react-0.1.0.tgz #path of the package after building package.
     
     
