@@ -1,7 +1,7 @@
 {
   "name": "basic-todo-react",
   "version": "0.1.0",
-  "private": False,
+  "private": True,
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@date-io/moment": "^1.3.13",
