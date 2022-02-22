@@ -50,5 +50,9 @@
   "devDependencies": {
     "nodemon": "^2.0.7",
     "redux-logger": "^3.0.6"
-  }
+  },
+  
+  "publishConfig": {
+  "registry":"https://npm.pkg.github.com/@pavankumar636/basic-todo-react "
+}
 }
