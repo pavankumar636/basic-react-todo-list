@@ -1,0 +1,42 @@
+name: node
+
+on: push 
+
+jobs: 
+ package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - run: npm ci
+      - run: npm pack
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+            name: package
+            path: "*.tgz"
+            
+ publish:
+ 
+    name: "Publish to GitHub Packages"
+    needs: [package]
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'pavankumar636'
+    steps:
+    - name: Upload
+      uses: actions/download-artifact@v2
+      with:
+          name: package
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+        registry-url: https://npm.pkg.github.com/
+        scope: "@pavankumar636"
+    - run: echo "registry=https://npm.pkg.github.com/@pavankumar636" >> .npmrc
+    - run: npm publish $(ls *.tgz)
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
