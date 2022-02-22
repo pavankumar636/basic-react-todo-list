@@ -39,4 +39,4 @@ jobs:
     - run: echo "registry=https://npm.pkg.github.com/@pavankumar636" >> .npmrc
     - run: npm publish $(ls *.tgz)
       env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        NODE_AUTH_TOKEN: ${{secrets.pacakge_t}}
