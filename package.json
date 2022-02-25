@@ -53,6 +53,6 @@
   },
   
   "publishConfig": {
-  "registry":"https://npm.pkg.github.com/@pavankumar636/basic-todo-react"
+  "registry":"https://npm.pkg.github.com/@pavankumar636"
 }
 }
