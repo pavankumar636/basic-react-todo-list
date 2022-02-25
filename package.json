@@ -1,5 +1,5 @@
 {
-  "name": "@pavankumar636/new-npm-app",
+  "name": "@pavankumar636/basic-react-todo-list",
   "version": "0.1.0",
   "proxy": "http://localhost:5000",
   "dependencies": {
