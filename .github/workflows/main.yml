@@ -1,30 +1,37 @@
-name: Node.js Package
+name: Node.js Package  #name of the workflow
 
 on:
-  release:
-    types: [created]
-  workflow_dispatch:
+   push:
+    branches: [ main ] 
+
+#   release:
+#     types: [created]
+#   workflow_dispatch:
     
 
 jobs:
  
      
 
-  publish-gpr:
+  publish-Github-packages:
     
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2  #This will help in Checking Out the code and running it in workflow.
+      - uses: actions/setup-node@v2 #This action helps with building node packages
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/
-          scope: '@pavankumar636'
-      - run: npm install
-      - run: npm publish
+          registry-url: https://npm.pkg.github.com/ #github registry packages url to push the package
+          scope: '@pavankumar636' #github username for login
+      - run: npm install  #Install's and get's all packages from package.json file
+      - run: npm publish 
+      # this step will publish in respective repo.
+      # the dependency code for github packages should be added to package.json
+      # Name should be mentioned with github_userName/repo_name.
         env:
-          NODE_AUTH_TOKEN: ${{secrets.PACAKGE_T}}
-      - run: npm start
+          NODE_AUTH_TOKEN: ${{secrets.PACAKGE_T}} 
+          # PAT token should be used and with permissions requried for the token and stored in secrets.
+#       - run: npm start
