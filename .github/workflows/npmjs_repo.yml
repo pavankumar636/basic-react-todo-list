@@ -33,7 +33,7 @@ jobs:
      
         
       - name: Publising Package in to npm Repositroy 
-        run: npm publish 
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN_NPM: ${{secrets.NPM_PACKAGE}} 
  
