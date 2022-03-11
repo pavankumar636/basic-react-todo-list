@@ -112,7 +112,9 @@ Adding dependency (publishConfig) in package.json to give Github Actions package
     }
     }
 
+![flow dig node package project](https://user-images.githubusercontent.com/31065669/157878820-e8ebcd0d-4448-4ae9-a39c-5706e0aaba7f.png)
 
+![github packages](https://user-images.githubusercontent.com/31065669/157879021-9fe243b6-1300-4844-a325-f9e10480b967.png)
 
 
 ## Tech Stack
