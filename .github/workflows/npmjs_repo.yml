@@ -32,8 +32,8 @@ jobs:
         run: npm install  #Install's and get's all packages from package.json file
      
         
-      - name: Publising Package in to Github Package Repositroy 
-        run: npm publish --access public
+      - name: Publising Package in to npm Repositroy 
+        run: npm publish 
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PACKAGE}} 
-          # PAT token should be used and with permissions requried for the token and stored in secrets.
+          NODE_AUTH_TOKEN_NPM: ${{secrets.NPM_PACKAGE}} 
+ 
