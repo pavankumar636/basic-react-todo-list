@@ -1,4 +1,4 @@
-name: Node.js Package  #name of the workflow
+name: Node.js package with npm reg  #name of the workflow
 
 on:
    push:
