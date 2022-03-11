@@ -1,7 +1,7 @@
 
 # GITHUB ACTIONS CRUD PROJECT WITH NODE.JS
 
-In this project with the help of GITHUB Actions work flow CICD process is created.
+In this project with the help of GITHUB Actions work flow CI-CD process is created.
 
 
 ## contents
@@ -19,7 +19,7 @@ In this project with the help of GITHUB Actions work flow CICD process is create
 
 The step by step process of the pipeline 
 
-  - Folder Structure for the workflow pipline.
+  - Folder Structure for the workflow pipeline.
     * package.json
 
     * .github/workflows 
@@ -37,11 +37,11 @@ package.json:
 workflows/node_js.yml: 
     
     This the file which is used to create respective steps 
-    for the workflow, in this file all the steps for the pipeline excution is 
+    for the workflow, in this file all the steps for the pipeline execution is 
     written, From which type Operating system the workflow should use,
-    actions that requried for the work flow, types of node versions
+    actions that required for the work flow, types of node versions
 
-    Note: This folder structure should be followed in any project reposiroties.
+    Note: This folder structure should be followed in any project repositories.
          .github/workflows/-----.yml
 
 
@@ -66,7 +66,7 @@ workflows/node_js.yml:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: writepublish-Github-packages:
+      packages: write publish-Github-packages:
     
      runs-on: ubuntu-latest
     permissions:
@@ -77,24 +77,42 @@ workflows/node_js.yml:
       - name: Github code Checkout
         uses: actions/checkout@v2  #This will help in Checking Out the code and running it in workflow.
         
-      - name: Setting and preapring for package creation.
+      - name: Setting and preparing for package creation.
         uses: actions/setup-node@v2 #This action helps with building node packages
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/ #github registry packages url to push the package
           scope: '@pavankumar636' #github username for login
           
-      - name: Installing Node pacakges and Building package.
+      - name: Installing Node packages and Building package.
         run: npm install  #Install's and get's all packages from package.json file
         
-      - name: Publising Package in to Github Package Repositroy 
+      - name: Publishing Package in to Github Package Repository 
         run: npm publish 
       # this step will publish in respective repo.
       # the dependency code for github packages should be added to package.json
       # Name should be mentioned with github_userName/repo_name.
         env:
           NODE_AUTH_TOKEN: ${{secrets.PACAKGE_T}} 
-          # PAT token should be used and with permissions requried for the token and stored in secrets.
+          # PAT token should be used and with permissions required for the token and stored in secrets.
+
+
+The secrets are stored in github secrets using PAT tokens with necessary permissions.
+
+Secrets tag with secrets is used to call respective secrets in the workflow.
+
+PAT Token should be given  repo, workflow, write packages, read packages permissions for pushing artifacts into github packages Repository.
+
+## package.json
+
+Adding dependency (publishConfig) in package.json to give Github Actions package Repository URL 
+
+    "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@pavankumar636"
+    }
+    }
+
+
 
 
 ## Tech Stack
