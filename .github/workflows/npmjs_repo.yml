@@ -30,7 +30,7 @@ jobs:
           
       - name: Installing Node pacakges and Building package.
         run: npm install  #Install's and get's all packages from package.json file
-        run: ls
+     
         
       - name: Publising Package in to Github Package Repositroy 
         run: npm publish --access public
