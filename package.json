@@ -52,11 +52,6 @@
   },
   
   "publishConfig": {
-  "registry":"https://npm.pkg.github.com/@pavankumar636"
-    
-},
-  
-  "publishConfig": {
   "registry":"https://registry.npmjs.org"
 }
 }
