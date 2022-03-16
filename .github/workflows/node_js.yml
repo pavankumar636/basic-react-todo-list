@@ -21,21 +21,21 @@ jobs:
       - name: Github code Checkout
         uses: actions/checkout@v2  #This will help in Checking Out the code and running it in workflow.
         
-      - name: Setting and preapring for package creation.
+      - name: Setting and preparing for package creation.
         uses: actions/setup-node@v2 #This action helps with building node packages
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/ #github registry packages url to push the package
           scope: '@pavankumar636' #github username for login
           
-      - name: Installing Node pacakges and Building package.
+      - name: Installing Node packages and Building package.
         run: npm install  #Install's and get's all packages from package.json file
         
-      - name: Publising Package in to Github Package Repositroy 
+      - name: Publishing Package in to Github Package Repository 
         run: npm publish 
       # this step will publish in respective repo.
       # the dependency code for github packages should be added to package.json
       # Name should be mentioned with github_userName/repo_name.
         env:
           NODE_AUTH_TOKEN: ${{secrets.PACAKGE_T}} 
-          # PAT token should be used and with permissions requried for the token and stored in secrets.
+          # PAT token should be used and with permissions required for the token and stored in secrets.
