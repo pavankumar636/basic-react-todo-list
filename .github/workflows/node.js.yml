@@ -2,8 +2,9 @@
 name: Node.js CI  #name of the workflow.
 
 on:
-  push:
-    branches: [ main ] #on every push the workflow will be triggered.
+#   push:
+#     branches: [ main ] #on every push the workflow will be triggered.
+  workflow_dispatch:
 
 
 jobs:
