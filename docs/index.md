@@ -96,6 +96,7 @@ workflows/node_js.yml:
           NODE_AUTH_TOKEN: ${{secrets.PACKAGE_T}} 
           # PAT token should be used and with permissions required for the token and stored in secrets.
 
+## Workflow Information 
 
      The secrets are stored in github secrets using PAT tokens with necessary permissions.
 
