@@ -108,12 +108,13 @@ workflows/node_js.yml:
 
 ## Triggers for starting the workflow.
 
- Node.js work flow can be started in various methods:
-      on push event, 
+  Node.js work flow can be started in various methods:
+ 
+       on push event, 
       
-      pull event and 
+       pull event and 
       
-      workflow_dispatch ( manual trigger).
+       workflow_dispatch ( manual trigger).
 
 ## package.json
 
