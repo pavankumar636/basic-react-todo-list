@@ -93,15 +93,24 @@ workflows/node_js.yml:
       # the dependency code for github packages should be added to package.json
       # Name should be mentioned with github_userName/repo_name.
         env:
-          NODE_AUTH_TOKEN: ${{secrets.PACAKGE_T}} 
+          NODE_AUTH_TOKEN: ${{secrets.PACKAGE_T}} 
           # PAT token should be used and with permissions required for the token and stored in secrets.
 
 
-The secrets are stored in github secrets using PAT tokens with necessary permissions.
+ The secrets are stored in github secrets using PAT tokens with necessary permissions.
 
-Secrets tag with secrets is used to call respective secrets in the workflow.
+ Secrets tag with secrets is used to call respective secrets in the workflow.
 
-PAT Token should be given  repo, workflow, write packages, read packages permissions for pushing artifacts into github packages Repository.
+ PAT Token should be given  repo, workflow, write packages, read packages permissions for pushing artifacts into github packages Repository.
+
+ In this workflow node version 16 is used, depending on project requirement the versions can we used accordingly. 
+
+## Triggers for starting the workflow.
+
+Node.js work flow can be started in various methods:
+  on push event, 
+  pull and 
+  workflow_dispatch ( manual trigger).
 
 ## package.json
 
