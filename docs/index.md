@@ -97,13 +97,13 @@ workflows/node_js.yml:
           # PAT token should be used and with permissions required for the token and stored in secrets.
 
 
- The secrets are stored in github secrets using PAT tokens with necessary permissions.
+     The secrets are stored in github secrets using PAT tokens with necessary permissions.
 
- Secrets tag with secrets is used to call respective secrets in the workflow.
+     Secrets tag with secrets is used to call respective secrets in the workflow.
 
- PAT Token should be given  repo, workflow, write packages, read packages permissions for pushing artifacts into github packages Repository.
+     PAT Token should be given  repo, workflow, write packages, read packages permissions for pushing artifacts into github packages Repository.
 
- In this workflow node version 16 is used, depending on project requirement the versions can we used accordingly. 
+     In this workflow node version 16 is used, depending on project requirement the versions can we used accordingly. 
 
 ## Triggers for starting the workflow.
 
@@ -120,6 +120,8 @@ Adding dependency (publishConfig) in package.json to give Github Actions package
     "registry":"https://npm.pkg.github.com/@pavankumar636"
     }
     }
+    
+## Workflow Flow Chart.
 
 ![flow dig node package project](https://user-images.githubusercontent.com/31065669/157878820-e8ebcd0d-4448-4ae9-a39c-5706e0aaba7f.png)
 
